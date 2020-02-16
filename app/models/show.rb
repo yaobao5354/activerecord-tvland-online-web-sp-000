@@ -3,6 +3,9 @@ class Show < ActiveRecord::Base
   has_many :actors, through: :characters
 
   def actors_list
-    binding.pry
+    actors_array = []
+    self.actors.each do |actor|
+      actors_array << actor.name
+    end 
   end
 end
